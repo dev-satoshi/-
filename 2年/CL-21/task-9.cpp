@@ -1,25 +1,29 @@
-#include    <stdio.h>
-#define MaxNum 10000
+#include <iostream>
+#include <ctime>
 
-int checkPrime(int num) {
-    int i;
-
-    for (i=3; i<num; i+=2) {
-        if (num % i==0) {
-            return 0;
+bool checkPrime(int num) {
+    for (int i = 3; i < num; i += 2) {
+        if (num % i == 0) {
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
-int main(void) {
-    int j;
+int main() {
+    double st = static_cast<double>(clock()) / CLOCKS_PER_SEC;
 
-    printf("2 ");
-    for(j=3; j<=MaxNum; j+=2) {
-        if (checkPrime(j) == 1) {
-            printf("%d ", j);
+    int MaxNum = 100000;
+    std::cout << "2 ";
+    for (int j = 3; j <= MaxNum; j += 2) {
+        if (checkPrime(j)) {
+            std::cout << j << " ";
         }
     }
-}
+    std::cout << std::endl;
 
+    double en = static_cast<double>(clock()) / CLOCKS_PER_SEC;
+    std::cout << "time : " << en - st << " [s]" << std::endl;
+
+    return 0;
+}
