@@ -27,7 +27,7 @@ if __name__ == '__main__':
     ]
 
     print("+-----+-----+-----+-----+-------+")
-    print("| SNO |  P1 |  P2 |  P3 |  AVG  |")
+    print("| SNO | P1 | P2 | P3 | AVG |")
     print("+-----+-----+-----+-----+-------+")
     for i in range(5):
         print("| {:3d} | {:3d} | {:3d} | {:3d} | {:5.1f} |".format((i + 1), p[i].getP1(), p[i].getP2(), p[i].getP3(), p[i].getAvg()))
